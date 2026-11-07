@@ -1,0 +1,230 @@
+/* Tema claro único: superfícies brancas, texto preto e cores de estado com contraste. */
+html { scrollbar-gutter: stable; }
+body {
+  background: #fff;
+  color: var(--text);
+}
+
+::selection { color: #111; background: #f7e78e; }
+button, a, input, select { touch-action: manipulation; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.sidebar, .topbar, .panel, .drawer, .modal, .comparison-card, .impact-card {
+  background: #fff;
+  color: var(--text);
+}
+.sidebar, .topbar, .drawer { border-color: var(--line); }
+.brand-mark { background: var(--brand); color: #111; }
+.brand-word, .page-heading h1, .drawer-title { color: #111; }
+.brand-word small, .nav-caption, .sidebar-signature, .shift,
+.live-label, .stat-label, .panel-title .icon, .drawer-title > .icon,
+.room-label, .cashier, .table-top span, .legend-items, .legend-title,
+.legend .demo-badge, .value-sim-label { color: var(--muted); }
+.nav-link { color: #26313e; }
+.nav-link:hover { background: var(--hover); color: #111; }
+.nav-link.active {
+  color: var(--brand-ink);
+  background: var(--brand-tint);
+  border-color: var(--brand-border);
+  font-weight: 650;
+}
+.nav-link.active:before { background: var(--brand-ink); }
+.demo-environment { background: var(--surface-subtle); }
+.avatar, .prototype-chip, .venue-location {
+  background: var(--brand-tint);
+  color: var(--brand-ink);
+  border-color: var(--brand-border);
+}
+.demo-badge, .equipment .demo-badge, .map-water .demo-badge {
+  color: var(--muted);
+}
+
+/* Bordas de controles e foco permanecem distinguíveis nas superfícies claras. */
+.btn, .icon-button, .search, .filter, .segment { border-color: var(--control-border); }
+.btn { background: var(--raised); color: #111; }
+.btn:hover:not(:disabled) {
+  filter: none;
+  background: #e8edf2;
+  border-color: #4b5563;
+}
+.btn-primary {
+  background: var(--brand);
+  border-color: var(--brand-border);
+  color: #111;
+  font-weight: 650;
+}
+.btn-primary:hover:not(:disabled) {
+  background: #d9b918;
+  border-color: #675000;
+  color: #111;
+}
+.btn-ghost { background: #fff; }
+.btn-danger { color: var(--red); background: var(--red-tint); border-color: var(--red-border); }
+.btn-danger:hover:not(:disabled) { color: var(--red); background: #fce0dc; border-color: var(--red); }
+.btn-green { color: var(--green); background: var(--green-tint); border-color: var(--green-border); }
+.btn-green:hover:not(:disabled) { color: var(--green); background: #dcefe2; border-color: var(--green); }
+button:disabled {
+  opacity: 1;
+  color: #5e6670;
+  background: #f0f2f4;
+  border-color: #c2c9d1;
+}
+button:disabled .icon, .drawer-actions .btn:disabled .icon { color: #5e6670; }
+.icon-button { color: #364152; background: #fff; }
+.icon-button:hover { background: var(--hover); color: #111; }
+.search { background: #fff; }
+.search input { color: #111; }
+.search input::placeholder { color: #596575; opacity: 1; }
+.search input:focus-visible { outline: none; }
+.search:focus-within { outline: 3px solid var(--focus); outline-offset: 3px; }
+.segment { background: var(--surface-subtle); }
+.segment button { color: #374151; }
+.segment button:hover { background: #e8edf2; }
+.segment button.active {
+  color: #111;
+  background: var(--brand-tint);
+  box-shadow: inset 0 0 0 1px var(--brand-border);
+  font-weight: 650;
+}
+.filter { color: #374151; background: #fff; }
+.filter:hover { background: var(--hover); }
+.filter.active { color: var(--brand-ink); background: var(--brand-tint); border-color: var(--brand-border); font-weight: 650; }
+
+/* Os rótulos e ícones continuam descrevendo os estados além da cor. */
+.equipment { color: #111; background: var(--green-tint); border-color: var(--green-border); }
+.equipment.recovery, .equipment.critical { background: var(--red-tint); border-color: var(--red-border); }
+.equipment.open { background: var(--amber-tint); border-color: var(--amber-border); }
+.equipment.offline { background: var(--gray-tint); border-color: var(--gray-border); }
+.equip-set, .equip-id, .equip-mini { color: var(--muted); }
+.offline .equip-temp, .offline .equip-message { color: var(--gray); }
+.equipment:hover { box-shadow: 0 0 0 3px #12643b26; }
+.equipment:is(.critical, .recovery):hover { box-shadow: 0 0 0 3px #a91f1926; }
+.equipment.open:hover { border-color: var(--yellow); box-shadow: 0 0 0 3px #76500026; }
+.equipment.offline:hover { box-shadow: 0 0 0 3px #4b556326; }
+.status-led { box-shadow: 0 0 0 2px #fff; }
+.recovery .status-led, .open .status-led, .critical .status-led { box-shadow: 0 0 0 2px #fff; }
+.floorplan-wrap { background: #fff; }
+.cashier { background: #f1f4f8; border-color: var(--control-border); color: #273142; }
+.cashier:hover { background: var(--brand-tint); border-color: var(--brand-border); color: #111; }
+.room-label.context-link { color: #344154; }
+.room-label.context-link:hover { color: var(--brand-ink); text-decoration: underline; }
+.table-top { background: #eaf0f5; border-color: #7a899b; }
+.table-top:before, .table-top:after { background: #e2eaf1; border-color: #7a899b; }
+.plant { color: var(--green); }
+.map-water { background: var(--blue-tint); border-color: var(--blue-border); color: #111; }
+.map-water:hover { background: var(--blue-hover); border-color: var(--blue); }
+.map-water.warning { background: var(--amber-tint); border-color: var(--yellow); }
+.map-water.leak { background: var(--red-tint); border-color: var(--red); }
+.water-mode .equipment { opacity: 1; }
+.water-mode .map-water { box-shadow: 0 0 0 4px #07557d26; }
+.stat:where(button):hover, .attention-item:hover, .comparison-card:hover { background: var(--hover); border-color: #7b8490; }
+.stat:where(button), .comparison-card { border-color: var(--control-border); }
+.stat-label .icon { color: #536172; }
+.count-pill, .nav-link .nav-count { color: var(--red); background: var(--red-tint); }
+.attention-symbol { color: var(--red); background: var(--red-tint); }
+.attention-item.recovery .attention-symbol { color: var(--yellow); background: var(--amber-tint); }
+.attention-item.offline .attention-symbol { color: var(--gray); background: var(--gray-tint); }
+.water-rail .btn { color: var(--blue); background: var(--blue-tint); border-color: var(--blue-border); }
+.comparison-details strong { color: #111; }
+.comparison-details strong.green { color: var(--green); }
+.comparison-details strong.red { color: var(--red); }
+.comparison-details strong.blue { color: var(--blue); }
+.comparison-details strong.gray { color: var(--gray); }
+.status-tag { background: #fff; }
+
+.legend { background: #fffffff5; color: #273142; border-color: var(--line); }
+.legend-item .yellow { color: #a47300; }
+.demo-progress { color: #111; background: var(--brand-tint); border-color: var(--brand-border); }
+.demo-progress-track { background: #ded9bd; }
+.demo-progress-track i { background: var(--brand-ink); }
+.insight-strip { color: #374151; background: var(--brand-tint); }
+.insight-strip strong { color: #111; }
+
+/* Painéis laterais, curvas e confirmações usam a mesma paleta clara. */
+.drawer { box-shadow: -12px 0 45px #15203326; }
+.drawer-header, .drawer-body { background: #fff; }
+.drawer-actions, .drawer-tabs { background: var(--surface-subtle); }
+.drawer-tabs button { color: #374151; }
+.drawer-tabs button:hover { color: var(--brand-ink); }
+.drawer-tabs button.active { color: var(--brand-ink); border-bottom-color: var(--brand-ink); font-weight: 650; }
+.status-banner { color: var(--green); background: var(--green-tint); border-color: var(--green-border); }
+.status-banner.critical, .status-banner.recovery { color: var(--red); background: var(--red-tint); border-color: var(--red-border); }
+.status-banner.open { color: var(--yellow); background: var(--amber-tint); border-color: var(--amber-border); }
+.status-banner.offline { color: var(--gray); background: var(--gray-tint); border-color: var(--gray-border); }
+.recovery-hint { color: var(--red); background: var(--red-tint); border-color: var(--red-border); }
+.recovery-track { background: #f2c9c5; }
+.temperature-chart { background: #fff; }
+.event-mini p { color: #26313e; }
+.event-mini p.red { color: var(--red); }
+.event-mini p.green { color: var(--green); }
+.event-mini p.orange { color: var(--brand-ink); }
+.event-mini p.yellow { color: var(--yellow); }
+.event-mini p.gray { color: var(--gray); }
+.acknowledged { color: var(--green); background: var(--green-tint); border-color: var(--green-border); }
+.equipment-source { color: var(--brand-ink); background: var(--brand-tint); border-color: var(--brand-border); }
+.equipment-source strong { color: #111; }
+.timeline-list:before { background: #8a95a3; }
+.timeline-event:before { border-color: #fff; }
+.timeline-event > time { color: #273142; }
+.timeline-event-inner { background: #fff; }
+.timeline-event-copy h3 { color: #111; }
+
+.scenario { color: #111; background: #fff; border-color: var(--control-border); }
+.scenario:hover { background: var(--hover); }
+.scenario.active { background: var(--blue-tint); border-color: var(--blue); }
+.scenario.active[data-scenario=abnormal] { background: var(--amber-tint); border-color: var(--yellow); }
+.scenario.active[data-scenario=leak] { background: var(--red-tint); border-color: var(--red); }
+.scenario-check { border-color: var(--control-border); }
+.active .scenario-check { color: var(--blue); background: #fff; border-color: var(--blue); }
+.active[data-scenario=abnormal] .scenario-check { color: var(--yellow); border-color: var(--yellow); }
+.active[data-scenario=leak] .scenario-check { color: var(--red); border-color: var(--red); }
+.network-main { color: #111; background: var(--blue-tint); border-color: var(--blue-border); }
+.network-main small, .sector-sensor { color: var(--muted); }
+.sector { color: #111; background: #fff; border-color: var(--control-border); }
+.sector:hover { background: var(--blue-hover); border-color: var(--blue); }
+.sector span { color: var(--blue); }
+.network-lines.stopped path { stroke: #64748b; }
+.reference-track { background: #dce5ec; }
+.reference-track:after { background: var(--brand-ink); width: 2px; }
+.reference-labels strong { color: #111; }
+.valve-visual:before, .valve-visual:after { background: #d3e7f1; border-color: var(--blue-border); }
+.water-alert { color: #111; background: var(--blue-tint); border-color: var(--blue-border); }
+.water-alert.warning { background: var(--amber-tint); border-color: var(--amber-border); }
+.water-alert.leak { background: var(--red-tint); border-color: var(--red-border); }
+.water-alert-copy p { color: #374151; }
+.water-alert-copy p.green { color: var(--green); }
+.modal { border-color: #8792a0; box-shadow: 0 20px 65px #15203326; }
+.modal p { color: #374151; }
+.modal-icon { color: var(--brand-ink); background: var(--brand-tint); border-color: var(--brand-border); }
+.modal-warning { color: var(--yellow); background: var(--amber-tint); border-color: var(--amber-border); }
+.toast { color: #111; background: #fff; border-color: var(--green-border); box-shadow: 0 8px 30px #15203326; }
+
+.impact-icon, .sensor-glyph { color: var(--brand-ink); background: var(--brand-tint); border-color: var(--brand-border); }
+.impact-card h2 { color: #374151; }
+.impact-value { color: #111; }
+.impact-bottom { background: var(--surface-subtle); }
+.impact-bottom strong { color: #111; }
+.proposal-notice { color: #111; background: var(--brand-tint); border-color: var(--brand-border); }
+.proposal-notice strong { color: #111; }
+.pipeline-step { color: #111; background: #fff; border-color: #8b95a3; }
+.pipeline-step span, .sensor-summary li, .context-method, .derived-details dt,
+.node-identity > strong, .sensor-detail h4, .sensor-detail strong,
+.instrument-description strong, .hardware-link-banner strong { color: #111; }
+.pipeline-arrow > .icon, .sensor-summary .icon, .node-identity > span,
+.sensor-detail small { color: var(--muted); }
+.proposal-tag { color: var(--brand-ink); background: var(--brand-tint); border-color: var(--brand-border); }
+.hardware-note { color: #374151; background: var(--surface-subtle); }
+.node-identity { color: #111; background: var(--brand-tint); border-color: var(--brand-border); }
+.sensor-detail { color: #111; background: #fff; }
+.hardware-link-banner { color: #111; background: var(--brand-tint); border-color: var(--brand-border); }
+.hardware-link-banner .btn { color: var(--brand-ink); border-color: var(--brand-border); background: #fff; }
+.hardware-references, .hardware-references a { color: #3b4c60; }
+.hardware-references a:hover { color: var(--blue); }
+
+@media (forced-colors: active) {
+  .status-led, .dot { border: 1px solid CanvasText; forced-color-adjust: none; }
+  .btn-primary, .nav-link.active, .filter.active, .segment button.active { border: 2px solid ButtonText; }
+}
